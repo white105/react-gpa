@@ -3,3 +3,43 @@ body {
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
+
+.calculator {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50rem;
+  margin: auto;
+}
+
+.column1, .column2, .column3 {
+  display: flex;
+  flex-direction: column;
+  height: 25rem;
+  border:  1px solid black;
+  width: 30%;
+  justify-content: space-between;
+}
+
+.courseInput, .gpaInput, .creditsInput {
+  width: 10rem;
+  height: 2rem;
+  outline: none;
+  margin: auto;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.calculateButton {
+  width: 15rem;
+  height: 2rem;
+  outline: none;
+  border-radius: 4px;
+  margin-top: 5rem;
+}
+
+.gpaHeader {
+  margin-top: 3rem;
+}
