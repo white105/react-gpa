@@ -36,6 +36,18 @@ class GPACalculator extends Component {
     console.log('gpa data', gpa_data)
     console.log('credits data', credits_data)
 
+    let total_points = 0
+    let total_credits = 0
+
+    for (var i=0; i<Math.min(gpa_data.length, credits_data.length); i++) {
+      if (credits_data[i].value > 0) {
+        total_credits += parseFloat(credits_data[i].value)
+        total_points += parseFloat(gpa_data[i].value * credits_data[i].value)
+      }
+    }
+
+    this.setState({ total_gpa : parseFloat(total_points / total_credits) })
+
 
     /*
 
