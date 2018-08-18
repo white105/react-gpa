@@ -12,7 +12,7 @@ body {
   margin: auto;
 }
 
-.column1, .column2, .column3 {
+.column {
   display: flex;
   flex-direction: column;
   height: 25rem;
@@ -32,13 +32,23 @@ body {
   box-sizing: border-box;
 }
 
-.calculateButton {
+.buttonsDiv {
+  width: 50rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.button {
   width: 15rem;
   height: 2rem;
   outline: none;
   border-radius: 4px;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
+
+
 
 .gpaHeader {
   margin-top: 3rem;
