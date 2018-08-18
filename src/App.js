@@ -95,24 +95,24 @@ class GPACalculator extends Component {
 
     return (
       <div className="App">
-        <h1>GPA Calculator</h1>
+        <h1 id='appTitle'>GPA CALCULATOR</h1>
 
 
         <div className='calculator'>
 
           <div className='column' id='column1'>
-            <h3>Course</h3>
+            <h3 className='columnTitle'>Course</h3>
             {course_content}
           </div>
 
           <div className='column' id='column2'>
-            <h3>GPA</h3>
+            <h3 className='columnTitle'>GPA</h3>
             {gpa_content}
           </div>
 
 
           <div className='column' id='column3'>
-            <h3>Credits</h3>
+            <h3 className='columnTitle'>Credits</h3>
             {credits_content}
           </div>
 
@@ -127,7 +127,7 @@ class GPACalculator extends Component {
 
         </div>
 
-        <h3 className='gpaHeader'>Your GPA is {this.state.total_gpa}</h3>
+        <h3 className='gpaHeader'>GPA - {this.state.total_gpa}</h3>
 
       </div>
     );

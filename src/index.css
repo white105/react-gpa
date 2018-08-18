@@ -4,6 +4,10 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+#appTitle {
+  font-weight: 200;
+}
+
 .calculator {
   display: flex;
   flex-direction: row;
@@ -13,7 +17,7 @@ body {
 }
 
 .column {
-  background: #347B98;
+  background: #2B9EB3;
   color: white;
   display: flex;
   flex-direction: column;
@@ -21,6 +25,12 @@ body {
   width: 30%;
   justify-content: space-between;
   border-radius: .7rem;
+}
+
+.columnTitle {
+  font-family: sans-serif;
+  font-weight: 200;
+  text-transform: capitalize;
 }
 
 .courseInput, .gpaInput, .creditsInput {
@@ -48,22 +58,22 @@ body {
   width: 15rem;
   height: 2rem;
   outline: none;
-  border-radius: 4px;
+  border-radius: .5rem;
   margin-top: 2rem;
   font-size: 1rem;
 }
 
-#addClassButton:active {
+#addClassButton {
   background: #44AF69;
   color: white;
 }
 
-#calculateButton:active {
+#calculateButton {
   background: #fcab10;
   color: white;
 }
 
-#resetButton:active {
+#resetButton {
   background: #F8333C;
   color: white;
 }
@@ -71,4 +81,6 @@ body {
 
 .gpaHeader {
   margin-top: 3rem;
+  font-family: sans-serif;
+  font-weight: 200;
 }
