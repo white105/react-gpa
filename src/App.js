@@ -14,12 +14,13 @@ class GPACalculator extends Component {
     this.addClass = this.addClass.bind(this)
     this.calculate = this.calculate.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
-    this.renderRow = this.renderRow.bind(this)
     this.reset = this.reset.bind(this)
-  }
 
-  componentDidMount() {
+    /* render methods */
 
+    this.renderCourseInput = this.renderCourseInput.bind(this)
+    this.renderGPAInput = this.renderGPAInput.bind(this)
+    this.renderCreditsInput = this.renderCreditsInput.bind(this)
   }
 
 
@@ -28,6 +29,13 @@ class GPACalculator extends Component {
   }
 
   calculate() {
+
+    let gpa_data = document.getElementsByClassName('gpaInput')
+    let credits_data = document.getElementsByClassName('creditsInput')
+
+    console.log('gpa data', gpa_data)
+    console.log('credits data', credits_data)
+
 
     /*
 
@@ -42,12 +50,20 @@ class GPACalculator extends Component {
     console.log('calculating gpa...')
   }
 
-  renderRow() {
+  renderCourseInput(i) {
+    return(<input type='text' className='courseInput'></input>)
+  }
 
+  renderGPAInput(i) {
+    return(<input type='text' className='gpaInput'></input>)
+  }
+
+  renderCreditsInput(i) {
+    return(<input type='text' className='creditsInput'></input>)
   }
 
   reset() {
-
+    this.setState({ num_rows: 1 })
   }
 
   handleInputChange(event) {
@@ -62,6 +78,20 @@ class GPACalculator extends Component {
 
   render() {
 
+    let course_list = []
+    let gpa_list = []
+    let credits_list = []
+
+    for (var i=0; i<this.state.num_rows; i++) {
+      course_list.push(this.renderCourseInput(i))
+      gpa_list.push(this.renderGPAInput(i))
+      credits_list.push(this.renderCreditsInput(i))
+    }
+
+    let course_content = (this.state.num_rows > 0) ? course_list.map(function(course) { return course } ) : null
+    let gpa_content = (this.state.num_rows > 0) ? gpa_list.map(function(gpa) { return gpa } ) : null
+    let credits_content = (this.state.num_rows > 0) ? credits_list.map(function(credits) { return credits } ) : null
+
 
     return (
       <div className="App">
@@ -72,30 +102,18 @@ class GPACalculator extends Component {
 
           <div className='column' id='column1'>
             <h3>Course</h3>
-            <input type='text' className='courseInput' ></input>
-            <input type='text' className='courseInput' ></input>
-            <input type='text' className='courseInput' ></input>
-            <input type='text' className='courseInput' ></input>
-            <input type='text' className='courseInput' ></input>
+            {course_content}
           </div>
 
           <div className='column' id='column2'>
             <h3>GPA</h3>
-            <input type='text' className='gpaInput' name='gpa1' onChange={this.handleInputChange}></input>
-            <input type='text' className='gpaInput' name='gpa2' onChange={this.handleInputChange}></input>
-            <input type='text' className='gpaInput' name='gpa3' onChange={this.handleInputChange}></input>
-            <input type='text' className='gpaInput' name='gpa4' onChange={this.handleInputChange}></input>
-            <input type='text' className='gpaInput' name='gpa5' onChange={this.handleInputChange}></input>
+            {gpa_content}
           </div>
 
 
           <div className='column' id='column3'>
             <h3>Credits</h3>
-            <input type='text' className='creditsInput' name='credits1' onChange={this.handleInputChange} ></input>
-            <input type='text' className='creditsInput' name='credits2' onChange={this.handleInputChange}></input>
-            <input type='text' className='creditsInput' name='credits3' onChange={this.handleInputChange}></input>
-            <input type='text' className='creditsInput' name='credits4' onChange={this.handleInputChange}></input>
-            <input type='text' className='creditsInput' name='credits5' onChange={this.handleInputChange}></input>
+            {credits_content}
           </div>
 
 

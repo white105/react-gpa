@@ -13,12 +13,14 @@ body {
 }
 
 .column {
+  background: #347B98;
+  color: white;
   display: flex;
   flex-direction: column;
-  height: 25rem;
   border:  1px solid black;
   width: 30%;
   justify-content: space-between;
+  border-radius: .7rem;
 }
 
 .courseInput, .gpaInput, .creditsInput {
@@ -26,10 +28,12 @@ body {
   height: 2rem;
   outline: none;
   margin: auto;
+  margin-bottom: 2rem;
   padding: 12px 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  font-size: 1rem;
 }
 
 .buttonsDiv {
@@ -46,8 +50,23 @@ body {
   outline: none;
   border-radius: 4px;
   margin-top: 2rem;
+  font-size: 1rem;
 }
 
+#addClassButton:active {
+  background: #44AF69;
+  color: white;
+}
+
+#calculateButton:active {
+  background: #fcab10;
+  color: white;
+}
+
+#resetButton:active {
+  background: #F8333C;
+  color: white;
+}
 
 
 .gpaHeader {
